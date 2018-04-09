@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
-  has_many :friends, class_name: "User", foreign_key: "main_user_id"
-  belongs_to :main_user, class_name: "User"
+  #has_many :friends, class_name: "User", foreign_key: "main_user_id"
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  #belongs_to :main_user, class_name: "User"
 end

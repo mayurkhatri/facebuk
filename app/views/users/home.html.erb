@@ -4,4 +4,13 @@
 <br/><br/>
 <%= @existing_post.text_content %>
 <br/><br/><br/>
+<% if @existing_posts.present? %>
+  <% @existing_posts.each do |existing_post| %>
+    <br/><br/>
+    <%= image_tag existing_post.image_url if existing_post.image_url.present? %>
+    <br/><br/>
+    <%= existing_post.text_content %>
+    <br/><br/><br/>
+  <%end%>
+<% end %>
 <%= render partial: "posts/form" %>
