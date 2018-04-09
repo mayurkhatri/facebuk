@@ -1,3 +1,7 @@
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
-<h1>Users#home</h1>
-<p>Find me in app/views/users/home.html.erb</p>
+<br/><br/><br/><br/>
+<%= image_tag @existing_post.image_url if @existing_post.image_url.present? %>
+<br/><br/>
+<%= @existing_post.text_content %>
+<br/><br/><br/>
+<%= render partial: "posts/form" %>

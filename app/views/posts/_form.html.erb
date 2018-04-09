@@ -1,0 +1,12 @@
+<%= form_for [current_user, @post] do |f| %>
+  <div class="field">
+    <%= f.label :text_content%>
+    <%= f.text_field :text_content%>
+  </div>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.submit "submit" %>
+  </div>
+<%end%>

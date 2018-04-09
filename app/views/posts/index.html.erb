@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <tr>
+    <%= image_tag post.image_url if post.image_url.present? %>
+    <br/>
+    <%= post.text_content %>
+    <br/>
+  </tr>
+<%end%>
