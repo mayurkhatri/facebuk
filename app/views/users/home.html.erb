@@ -1,15 +1,15 @@
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
 <br/><br/><br/><br/>
-<%= image_tag @existing_post.image_url if @existing_post.image_url.present? %>
-<br/><br/>
-<%= @existing_post.text_content %>
-<br/><br/><br/>
+
+
 <% if @existing_posts.present? %>
   <% @existing_posts.each do |existing_post| %>
-    <br/><br/>
+    <b>Friend name : </b> <%= existing_post.try(:user).try(:name) %>
+    <br/>
+    <%= existing_post.text_content %>
+    <br/>
     <%= image_tag existing_post.image_url if existing_post.image_url.present? %>
     <br/><br/>
-    <%= existing_post.text_content %>
     <br/><br/><br/>
   <%end%>
 <% end %>
