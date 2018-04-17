@@ -4,8 +4,6 @@ class Post < ApplicationRecord
 
   # The posts posted from mobile are by default added to the
   # "Mobile Uploads" album if not created under an album
-
-  belongs_to :user
   belongs_to :album
   has_many :photos, dependent: :delete_all
 end
