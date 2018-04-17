@@ -1,3 +1,48 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//colors
+$color_gallery_approx: #eee;
+$color_dodger_blue_approx: #2196f3;
+$color_regal_blue_approx: #064579;
+
+//fonts
+$font_0: Lato;
+$font_1: sans-serif;
+
+body {
+  font-family: $font_0, $font_1;
+}
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: $color_gallery_approx;
+  overflow-x: hidden;
+  padding: 8px 0;
+  a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: $color_dodger_blue_approx;
+    display: block;
+    &:hover {
+      color: $color_regal_blue_approx;
+    }
+  }
+}
+.main {
+  margin-left: 140px;
+  font-size: 28px;
+  padding: 0 10px;
+}
+@media screen and(max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+    a {
+      font-size: 18px;
+    }
+  }
+}
