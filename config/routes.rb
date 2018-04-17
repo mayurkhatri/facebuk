@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :photos
   end
 
-  resources :users, concerns: [:albumable, :postable]
+  resources :users, concerns: :albumable
   resources :albums, concerns: :postable
   resources :posts, concerns: :photoable
 
