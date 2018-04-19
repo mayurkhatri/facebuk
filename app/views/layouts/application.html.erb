@@ -12,6 +12,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, {:style => "float:right", :method => :delete} %>
+      <br/><br/><br/><br/>
+
+      <div class="sidenav">
+        <%= link_to "News Feed", root_path %>
+        <%= link_to "Events", user_events_path(current_user.id) %>
+        <%= link_to "Pages", root_path %>
+        <%= link_to "Photos", user_albums_path(current_user.id) %>
+      </div>
+    <%end%>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
 </html>
