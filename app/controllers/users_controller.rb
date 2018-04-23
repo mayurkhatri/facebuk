@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   def home
     # if request.user_agent =~ /Mobile/
     #   @album = current_user.albums.where(name: "Mobile Uploads").first
