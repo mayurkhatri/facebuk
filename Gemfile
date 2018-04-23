@@ -39,6 +39,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'spring-commands-rspec', '1.0.4'
+  gem 'rspec-rails', '3.7.2'
+  gem 'factory_bot_rails', '4.8.2'
 end
 
 group :development do
@@ -46,7 +49,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
@@ -56,4 +59,4 @@ gem 'devise', '~> 4.4.3'
 gem 'carrierwave', '~> 1.0'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+gem "bootstrap-sass"

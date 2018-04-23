@@ -10,10 +10,9 @@ class User < ApplicationRecord
   has_many :friends, :through => :friendships
   has_many :events
 
-  after_create :create_default_album
+  after_create :create_default_albums
 
-
-  def create_default_album
+  def create_default_albums
     self.albums.create(name: "Mobile Uploads")
     self.albums.create(name: "Timeline Posts")
   end
