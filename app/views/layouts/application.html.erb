@@ -13,6 +13,9 @@
 
   <body>
     <div class="container-fluid">
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
       <%if user_signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path, {:style => "float:right", :method => :delete} %>
         <br/><br/><br/><br/>
