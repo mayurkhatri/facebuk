@@ -15,7 +15,6 @@ feature 'home page' do
     visit('/')
     fill_in('Password', with: "test123")
     click_on('Log in')
-
     expect(page).to have_content('Invalid Email or password.')
   end
 end

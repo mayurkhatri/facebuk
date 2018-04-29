@@ -40,6 +40,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'spring-commands-rspec', '1.0.4'
+  gem 'spring-commands-cucumber'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'rspec-rails', '3.7.2'
   gem 'factory_bot_rails', '4.8.2'
 end
@@ -60,3 +63,4 @@ gem 'carrierwave', '~> 1.0'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "bootstrap-sass"
+gem "shoulda-matchers", require: false
