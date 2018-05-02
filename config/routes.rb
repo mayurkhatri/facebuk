@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/home'
 
   concern :albumable do
     resources :albums
@@ -12,8 +11,10 @@ Rails.application.routes.draw do
   concern :photoable do
     resources :photos
   end
-
   resources :users do
+    member do
+      get :home
+    end
     resources :albums
     resources :events
   end
