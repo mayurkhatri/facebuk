@@ -1,1 +1,5 @@
-<h1>In events index page</h1>
+<% @events.each do |event| %>
+  <%= event.start_date %>
+  <%= event.name %>
+  <br/>
+<% end %>
