@@ -8,6 +8,7 @@ FactoryBot.define do
   factory :album do
   end
   factory :event do
+    sequence(:name) { |n| "test#{n} event"}
   end
   factory :user do
     sequence(:email) { |n| "test#{n}@gmail.com"}

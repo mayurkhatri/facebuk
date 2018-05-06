@@ -16,8 +16,8 @@ Rails.application.routes.draw do
       get :home
     end
     resources :albums
-    resources :events
   end
+  resources :events
   resources :albums, concerns: :postable
   resources :posts, concerns: :photoable
 
