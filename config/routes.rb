@@ -8,18 +8,20 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  concern :photoable do
-    resources :photos
-  end
+  # concern :photoable do
+  #   resources :photos
+  # end
   resources :users do
     member do
       get :home
     end
     resources :albums
+    resources :photos
   end
   resources :events
   resources :albums, concerns: :postable
-  resources :posts, concerns: :photoable
+  #resources :posts, concerns: :photoable
+  resources :posts
 
   resources :friendships
 
