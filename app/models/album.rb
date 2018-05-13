@@ -6,4 +6,5 @@ class Album < ApplicationRecord
   # "Mobile Uploads" album if not created under an album
   belongs_to :user
   has_many :posts, dependent: :delete_all
+  has_many :photos, :through => :posts
 end

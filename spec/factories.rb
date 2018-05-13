@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :post do
     album
+    text_content "sample content for post"
   end
   factory :photo do
     post
@@ -13,6 +14,7 @@ FactoryBot.define do
   end
   factory :album do
     user
+    sequence(:name) { |n| "test#{n} album" }
   end
   factory :event do
     sequence(:name) { |n| "test#{n} event"}
