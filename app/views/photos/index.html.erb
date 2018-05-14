@@ -1,3 +1,11 @@
-<% @photos.each do |photo| %>
-  <%= image_tag photo.image_url%>
+<h1>Photos</h1>
+<h4>Photos of you</h4>
+<% @photos.in_groups_of(4) do |photo_group| %>
+  <div class="row">
+    <% photo_group.each do |photo| %>
+      <% if photo.present? %>
+        <div><%= image_tag photo.image_url, :size => '237x157'%></div>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>

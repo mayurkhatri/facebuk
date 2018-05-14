@@ -8,9 +8,7 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  # concern :photoable do
-  #   resources :photos
-  # end
+  resources :pages
   resources :users do
     member do
       get :home
@@ -20,9 +18,7 @@ Rails.application.routes.draw do
   end
   resources :events
   resources :albums, concerns: :postable
-  #resources :posts, concerns: :photoable
   resources :posts
-
   resources :friendships
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

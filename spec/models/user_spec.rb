@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:events) }
     it { should have_many(:posts).through(:albums) }
     it { should have_many(:friends).through(:friendships) }
+    it { should have_many(:pages) }
   end
 
   describe "#create_default_album" do

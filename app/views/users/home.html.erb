@@ -1,17 +1,13 @@
-<div style="text-align:center;">
-  <h1>Welcome</h1>
-</div>
-<!--
-<% if @existing_posts.present? %>
-  <% @existing_posts.each do |existing_post| %>
-    <b>Friend name : </b> <%= existing_post.try(:user).try(:name) %>
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <%= post.text_content %>
     <br/>
-    <%= existing_post.text_content %>
+    <% if post.photos.present? %>
+      <% post.photos.each do |photo| %>
+        <%= image_tag photo.image_url, :size => '237x157' %>
+      <% end %>
+    <% end %>
     <br/>
-    <%= image_tag existing_post.image_url if existing_post.image_url.present? %>
-    <br/><br/>
-    <br/><br/><br/>
-  <%end%>
+  <% end %>
 <% end %>
- -->
 <%#= render partial: "posts/form" %>

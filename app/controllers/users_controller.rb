@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     #     @existing_posts = @existing_posts + friend.try(:posts)
     #   end
     # end
+    @posts = current_user.posts
   end
 
   private
