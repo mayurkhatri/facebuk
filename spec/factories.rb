@@ -1,7 +1,11 @@
 FactoryBot.define do
+  factory :page do
+    user
+    name "test page"
+  end
   factory :post do
     album
-    text_content "sample content for post"
+    sequence(:text_content) { |n| "#{n} sample content for post"}
   end
   factory :photo do
     post

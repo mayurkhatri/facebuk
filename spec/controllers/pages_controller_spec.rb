@@ -23,11 +23,11 @@ RSpec.describe PagesController, type: :controller do
     end
   end
 
-  # describe "GET #show" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-
+  describe "GET #show" do
+    let(:page) { FactoryBot.create(:page) }
+    it "returns http success" do
+      get :show, params: { id: page.id }
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
