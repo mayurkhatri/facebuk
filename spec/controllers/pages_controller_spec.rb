@@ -14,6 +14,13 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
     end
+
+    it "assigns all posts to template" do
+      post_1 = user.pages.create(name: "Test post 1")
+      post_2 = user.pages.create(name: "Test post 2")
+      get :index
+      expect(assigns(:pages)).to match_array([post_1, post_2])
+    end
   end
 
   describe "GET #create" do
