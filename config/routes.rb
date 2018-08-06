@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get '/foos' => "users#foos"
+
+  mount Fastengine::Engine => "/fast"
+
   concern :albumable do
     resources :albums
   end
@@ -12,6 +16,9 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :home
+    end
+    member do
+      get :foos
     end
     resources :albums
     resources :photos
